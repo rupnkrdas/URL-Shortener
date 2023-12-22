@@ -4,34 +4,36 @@
 <head>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
 </head>
 
 <body>
     <h1>URL Shortener</h1>
-    <% if (locals.shortId) { %>
-        <p>URL Generated: http://localhost:8001/url/<%= shortId %>
+    <% if (locals.id) { %>
+        <p>URL Generated: http://localhost:8001/url/<%= id %>
         </p>
         <% } %>
+
             <div>
                 <form method="POST" action="/url">
                     <label>Enter Your Original URL</label>
-                    <input type="text" name="url" placeholder="https://example.com">
+                    <input type="text" name="url" placeholder="https://example.com" />
                     <button type="submit">Generate</button>
                 </form>
             </div>
-            <div>
+            <div style="margin-top: 30px">
                 <% if (locals.urls) { %>
                     <table>
                         <thead>
-                            <th>S. No.</th>
+                            <th>S. No</th>
                             <th>ShortID</th>
-                            <th>Redirect URL</th>
+                            <th>Redirect</th>
                             <th>Clicks</th>
                         </thead>
                         <tbody>
